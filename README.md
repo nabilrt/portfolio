@@ -30,7 +30,6 @@ No build process or dependencies required.
 ```
 my-portfolio/
 ├── index.html
-├── og-image.html
 └── assets/
     ├── og-image.png
     ├── script.js
