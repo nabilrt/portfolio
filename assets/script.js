@@ -151,21 +151,20 @@ window.addEventListener('DOMContentLoaded', () => {
 // Typing effect disabled for cleaner hero section
 // Uncomment below if you want the typing effect back
 
-// const subtitle = document.querySelector('.hero-subtitle');
-// const subtitleText = subtitle.textContent;
-// subtitle.textContent = '';
+const subtitle = document.querySelector('.hero-subtitle');
+const subtitleText = subtitle.textContent;
+subtitle.textContent = '';
 
-// let charIndex = 0;
-// function typeWriter() {
-//     if (charIndex < subtitleText.length) {
-//         subtitle.textContent += subtitleText.charAt(charIndex);
-//         charIndex++;
-//         setTimeout(typeWriter, 100);
-//     }
-// }
+let charIndex = 0;
+function typeWriter() {
+    if (charIndex < subtitleText.length) {
+        subtitle.textContent += subtitleText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 100);
+    }
+}
 
-// Start typing effect after a short delay
-// setTimeout(typeWriter, 500);
+setTimeout(typeWriter, 500);
 
 // ========================================
 // SKILL TAG ANIMATION
