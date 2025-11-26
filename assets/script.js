@@ -259,6 +259,56 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
+// CALCULATE WORK EXPERIENCE DURATION
+// ========================================
+
+function calculateDuration(startDate, endDate) {
+    const start = new Date(startDate + '-01');
+    const end = endDate === 'present' ? new Date() : new Date(endDate + '-01');
+
+    let years = end.getFullYear() - start.getFullYear();
+    let months = end.getMonth() - start.getMonth();
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    // Add 1 to include the starting month (count from 1st day inclusively)
+    months += 1;
+
+    // Handle month overflow
+    if (months >= 12) {
+        years += Math.floor(months / 12);
+        months = months % 12;
+    }
+
+    let duration = '';
+    if (years > 0) {
+        duration += `${years} ${years === 1 ? 'year' : 'years'}`;
+    }
+    if (months > 0) {
+        if (years > 0) duration += ' ';
+        duration += `${months} ${months === 1 ? 'month' : 'months'}`;
+    }
+
+    return duration;
+}
+
+// Update timeline durations
+const timelineItems = document.querySelectorAll('.timeline-item');
+timelineItems.forEach(item => {
+    const startDate = item.getAttribute('data-start');
+    const endDate = item.getAttribute('data-end');
+    const durationElement = item.querySelector('.timeline-duration');
+
+    if (startDate && endDate && durationElement) {
+        const duration = calculateDuration(startDate, endDate);
+        durationElement.textContent = duration;
+    }
+});
+
+// ========================================
 // LOG CONSOLE MESSAGE
 // ========================================
 

@@ -645,6 +645,21 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color) !important;
 }
 
+.tailwind-icon {
+    background-color: #06B6D4 !important;
+    color: white !important;
+}
+
+.tailwind-icon span {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.skill-card:hover .tailwind-icon {
+    background-color: var(--primary-color) !important;
+}
+
 .skill-card h3 {
     font-size: 1.125rem;
     color: var(--text-primary);
@@ -738,6 +753,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.timeline-duration {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--bg-accent);
+    color: var(--primary-color);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .timeline-content h3 {
